@@ -6,7 +6,7 @@ amigosSorteados = [];
 function adicionarAmigo(){
 
     let amigoNovo = document.querySelector('input').value;
-    console.log(amigoNovo);
+
     if ( listaAmigos.includes(amigoNovo) == false && amigoNovo !== "") {
 
             listaAmigos.push(amigoNovo);
@@ -46,7 +46,7 @@ function sortearAmigo() {
 
     let indice = parseInt(Math.random() * (length(listaAmigos) -1 ));
     let amigo = listaAmigos[indice];
-    listaAmigos = listaAmigos.filter(item => item !== amigoNovo);
+    listaAmigos = listaAmigos.filter(item => item !== amigo);
 
     if (amigosSorteados.includes(amigo)){
 
