@@ -27,7 +27,9 @@ function atualizarLista (listaTemp, texto){
 
     for (const amigo of listaTemp) {
         var novoItem = document.createElement("li");
-        novoItem.textContent = amigo;
+        novoItem.textContent = texto == 'resultado' 
+        ? ` O amigo secreto sorteado é: ${amigo}`
+        : amigo;
         document.getElementById(texto).appendChild(novoItem);
     }
 }
@@ -61,7 +63,7 @@ function sortearAmigo() {
         atualizarLista(amigosSorteados, 'resultado');
         
     } else {
-        
+
         if (amigosSorteados.length > 0) {
             limparlista('resultado');
             amigosSorteados = [];
