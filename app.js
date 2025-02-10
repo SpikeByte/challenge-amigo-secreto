@@ -10,7 +10,8 @@ function adicionarAmigo(){
     if ( listaAmigos.includes(amigoNovo) == false && amigoNovo !== "") {
 
             listaAmigos.push(amigoNovo);
-            atualizarLista();
+            limparlista('listaAmigos')
+            atualizarLista(listaAmigos, 'listaAmigos');
     
     } else {
 
@@ -22,20 +23,18 @@ function adicionarAmigo(){
     }   
 }
 
-function atualizarLista (){
+function atualizarLista (listaTemp, texto){
 
-    limparlista();
-
-    for (const amigo of listaAmigos) {
+    for (const amigo of listaTemp) {
         var novoItem = document.createElement("li");
         novoItem.textContent = amigo;
-        document.getElementById("listaAmigos").appendChild(novoItem);
+        document.getElementById(texto).appendChild(novoItem);
     }
 }
 
-function limparlista(){
+function limparlista(texto){
 
-        var lista = document.getElementById('listaAmigos');
+        var lista = document.getElementById(texto);
         while (lista.firstChild) {
             lista.removeChild(lista.firstChild);
         }
@@ -44,18 +43,31 @@ function limparlista(){
 
 function sortearAmigo() {
 
-    let indice = parseInt(Math.random() * (length(listaAmigos) -1 ));
-    let amigo = listaAmigos[indice];
-    listaAmigos = listaAmigos.filter(item => item !== amigo);
+    if (listaAmigos.length !== 0) {
+        
+        let indice = parseInt(Math.random() * (listaAmigos.length));
+        let escolhido = listaAmigos[indice];
+        
+        listaAmigos = listaAmigos.filter(item => item !== escolhido);
+        limparlista('listaAmigos')
+        atualizarLista(listaAmigos, 'listaAmigos');
 
-    if (amigosSorteados.includes(amigo)){
-
-        return sortear();
-
+        if (amigosSorteados.length > 0) {
+            limparlista('resultado');
+            amigosSorteados = [];
+        }
+        amigosSorteados.push(escolhido);
+        console.log(amigosSorteados);
+        atualizarLista(amigosSorteados, 'resultado');
+        
     } else {
         
-        atualizarLista();
+        if (amigosSorteados.length > 0) {
+            limparlista('resultado');
+            amigosSorteados = [];
+        }
+        alert("A lista de amigos está vazia, insira alguns nomes.")
 
     }
-
+   
 }
