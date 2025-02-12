@@ -20,7 +20,6 @@
 -  Cada vez que um nom é inserido temos a atualização da lista na página;
 -  Não é permitido inserir campo vazio ou nomes já inseridos;
 -  Após o sorteio, o nome escolhido sera removido da lista e depois apresentado na página;
--  Quando a lista estiver vazia (todos o nomes sorteados) receberá um aviso que a lista está vazia;
 
  # :white_check_mark: Tecnologias Utilizadas
 
