@@ -19,7 +19,7 @@
 -  Realizar o sorteio de um nome tendo como base uma lista prévia de nomes inseridos pelo usuário;
 -  Cada vez que um nom é inserido temos a atualização da lista na página;
 -  Não é permitido inserir campo vazio ou nomes já inseridos;
--  Após o sorteio, o nome escolhido sera removido da lista e depois apresentado na página;
+-  Após o sorteio, a lista de nomes sera esvaziada e o nome sorteado apresentado na página;
 
  # :white_check_mark: Tecnologias Utilizadas
 
