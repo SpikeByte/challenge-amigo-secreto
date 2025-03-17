@@ -21,6 +21,11 @@
 -  Não é permitido inserir campo vazio ou nomes já inseridos;
 -  Após o sorteio, a lista de nomes sera esvaziada e o nome sorteado apresentado na página;
 
+ # 🔨: URL da aplicação
+
+https://spikebyte.github.io/challenge-amigo-secreto/
+
+
  # :white_check_mark: Tecnologias Utilizadas
 
 -  HTML
